@@ -13,7 +13,6 @@ OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(115200);
   WiFiMulti.addAP(WIFI_SSID, WIFI_PASS);
   Serial.print("Connecting to WIFI");
@@ -29,7 +28,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   delay(5000);
   InfluxData row("room1");
   row.addValue("temperature", random(1, 20));
